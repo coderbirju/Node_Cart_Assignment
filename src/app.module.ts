@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductsModule } from './products/products.module';
+import { CartModule } from './cart/cart.module';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
@@ -13,7 +14,7 @@ import { ProductsModule } from './products/products.module';
     database: 'ecommerce_dev',
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
     synchronize: true,
-  }), ProductsModule],
+  }), ProductsModule, CartModule],
   controllers: [AppController],
   providers: [AppService],
 })
