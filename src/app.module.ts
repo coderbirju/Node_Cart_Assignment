@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductsModule } from './products/products.module';
 import { CartModule } from './cart/cart.module';
+import { BillingModule } from './billing/billing.module';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
@@ -14,7 +15,7 @@ import { CartModule } from './cart/cart.module';
     database: 'ecommerce_dev',
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
     synchronize: true,
-  }), ProductsModule, CartModule],
+  }), ProductsModule, CartModule, BillingModule],
   controllers: [AppController],
   providers: [AppService],
 })
